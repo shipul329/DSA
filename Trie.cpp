@@ -1,3 +1,5 @@
+/// ... memory efficient code of trie... 
+
 #include<bits/stdc++.h>
  
 using namespace std;
@@ -23,7 +25,50 @@ struct trie{ /// structure of trie
     }
 };
 
+struct trie2{
+	bool isend;
+	
+	unordered_map<char, trie2*>mp;
+	
+	trie2()
+	{
+		  isend=false;
+	}
+};
+
 struct trie *root; /// decleration
+struct trie2 *root1;
+
+void insert2(string s)
+{
+	struct trie2 *cur=root1;
+	
+	for(auto ch:s)
+	{
+		if(!cur->mp.count(ch))
+		{
+			cur->mp[ch]=new trie2;
+		}
+		
+		cur=cur->mp[ch];
+	}
+	
+	cur->isend=true;
+}
+
+bool search2(string s)
+{
+	struct trie2 *cur=root1;
+	
+	for(auto ch:s)
+	{
+		if(!cur->mp.count(ch)) return false;
+		
+		cur=cur->mp[ch];
+	}
+	
+	return cur->isend;
+}
 
 void insert(string s)
 {
