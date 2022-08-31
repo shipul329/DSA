@@ -110,7 +110,9 @@ void solve()
 {
 
     root=new trie; /// and we make it
-    int n;
+    root1=new trie2;
+    
+    ll n;
     cin >> n;
 
     while(n--)
@@ -118,7 +120,7 @@ void solve()
         string s;
         cin >> s;
 
-        insert(s);
+        insert2(s);
     }
 
     cin >> n;
@@ -127,7 +129,7 @@ void solve()
         string s;
         cin >> s;
 
-        if(search(s))
+        if(search2(s))
         cout << s << " is present" << nn;
 
         else cout << s << " is not present" << nn;
