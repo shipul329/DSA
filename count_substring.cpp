@@ -1,3 +1,6 @@
+/// count number of substrings in given string s in O(|s|) time
+/// manacher algorithm
+
 #include<bits/stdc++.h>
 #define pi acos(-1)
  
