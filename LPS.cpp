@@ -1,3 +1,5 @@
+/// find longest palindromic substring 
+
 #include<bits/stdc++.h>
 #define pi acos(-1)
  
@@ -59,7 +61,7 @@ void solve2() /// dp approach
    // cout << ans << nn;
 }
 
-void solve() /// 
+void solve() /// O(n^2) time and O(1) space approach
 {
     string s;
     cin >> s;
